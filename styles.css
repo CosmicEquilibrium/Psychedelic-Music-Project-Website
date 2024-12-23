@@ -1,0 +1,166 @@
+@font-face {
+  font-family: Audiowide;
+  src: url(font/Audiowide/Audiowide-Regular.ttf);
+}
+
+html {
+  background: repeating-linear-gradient(
+      190deg,
+      rgb(255 0 0 / 50%) 40px,
+      rgb(255 153 0 / 50%) 80px,
+      rgb(255 255 0 / 50%) 120px,
+      rgb(0 255 0 / 50%) 160px,
+      rgb(0 0 255 / 50%) 200px,
+      rgb(75 0 130 / 50%) 240px,
+      rgb(238 130 238 / 50%) 280px,
+      rgb(255 0 0 / 50%) 300px
+    ),
+    repeating-linear-gradient(
+      -190deg,
+      rgb(255 0 0 / 50%) 30px,
+      rgb(255 153 0 / 50%) 60px,
+      rgb(255 255 0 / 50%) 90px,
+      rgb(0 255 0 / 50%) 120px,
+      rgb(0 0 255 / 50%) 150px,
+      rgb(75 0 130 / 50%) 180px,
+      rgb(238 130 238 / 50%) 210px,
+      rgb(255 0 0 / 50%) 230px
+    ),
+    repeating-linear-gradient(
+      23deg,
+      red 50px,
+      orange 100px,
+      yellow 150px,
+      green 200px,
+      blue 250px,
+      indigo 300px,
+      violet 350px,
+      red 370px
+    );
+}
+
+body{
+    font-family: 'Audiowide';
+    text-shadow: black 0px 1px 2px;
+    background-image: linear-gradient(rebeccapurple, black);
+    text-align: center;
+    border: black;
+    border-style: solid;
+    margin: 20px auto;
+    min-width: 80px;
+    max-width: 720px;
+    border-radius: 20px;
+    box-shadow: lime 0px 5px 5px;
+}
+
+img {
+  filter: drop-shadow(0px 5px 5px greenyellow);
+}
+
+#photo {
+  border-radius: 50%;
+} 
+
+p {
+  color: white;
+}
+
+h1 {
+  color: greenyellow;
+}
+
+h2 {
+  color: orange;
+}
+
+hr {
+  border: black;
+  border-style: solid;
+  border-top: 5px;
+  box-shadow: grey 0px 5px 5px;
+} 
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+figure {
+  color: white;
+}
+
+#news-list {
+  padding-bottom: 20px;
+  color: white;
+  list-style-type: "\1F6F8";
+  list-style-position: inside;
+}
+
+.fa-brands {
+  padding: 50px;
+  font-size: 100px;
+  width: 50px;
+  text-align: center;
+  color: orange;
+}
+
+.wrapper {
+    width:100vw;
+    height:100vh;
+    background: radial-gradient(farthest-corner at 30vw 20vh,#7397a1 1%,#3f2c41 100%);
+}
+$s1:"";
+$s2:"";
+$s3:"";
+@for $i from 1 through 300 {
+    $s1: $s1 + random(1000)*0.1vw + " " + random(1000)*0.1vh + " " + 0 + " " + random(50)*-0.01rem + #fff;
+    $s2: $s2 + random(1000)*0.1vw + " " + random(1000)*0.1vh + " " + 0 + " " + random(50)*-0.01rem + #fff;
+    $s3: $s3 + random(1000)*0.1vw + " " + random(1000)*0.1vh + " " + 0 + " " + random(50)*-0.01rem + #fff;
+    @if $i < 300 {
+        $s1: $s1 + ",";
+        $s2: $s2 + ",";
+        $s3: $s3 + ",";
+    }
+}
+.snow {
+    border-radius: 50%;
+    opacity: 0.8;
+    position: absolute;
+    top:-100vh;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.layer1 {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter:blur(1.5px);
+    box-shadow: #{$s1};
+    animation-duration: 6s;
+}
+.layer1.a {
+    animation-delay: -3s;
+}
+.layer2 {
+    width: 1.2rem;
+    height: 1.2rem;
+    filter:blur(3px);
+    box-shadow: #{$s2};
+    animation-duration: 8s;
+}
+.layer2.a {
+    animation-delay: -4s;
+}
+.layer3 {
+    width: 0.8rem;
+    height: 0.8rem;
+    filter:blur(6px);
+    box-shadow: #{$s3};
+    animation-duration: 10s;
+}
+.layer3.a {
+    animation-delay: -5s;
+}
+@keyframes fall {
+    100% {transform: translateY(200vh); }
+}
